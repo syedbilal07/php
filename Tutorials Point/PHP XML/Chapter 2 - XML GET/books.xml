@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<tutorialspoint>
+
+    <course category = "JAVA">
+        <title lang = "en">Java</title>
+        <tutor>Gopal</tutor>
+        <duration>4</duration>
+        <price>$30</price>
+    </course>
+
+    <course category = "HADOOP">
+        <title lang = "en">Hadoop</title>.
+        <tutor>Satish</tutor>
+        <duration>>3</duration>
+        <price>$50</price>
+    </course>
+
+    <course category = "HTML">
+        <title lang = "en">html</title>
+        <tutor>raju</tutor>
+        <duration>5</duration>
+        <price>$50</price>
+    </course>
+
+    <course category = "WEB">
+        <title lang = "en">Web Technologies</title>
+        <tutor>Javed</tutor>
+        <duration>10</duration>
+        <price>$60</price>
+    </course>
+
+</tutorialspoint>

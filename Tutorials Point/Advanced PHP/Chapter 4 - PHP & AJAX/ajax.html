@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>AJAX With PHP</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	</head>
+		<body>
+
+			
+			<form name = 'myForm'>
+				<div class="form-group">
+					<label for="max-age">Max Age:</label> 
+						<input type = 'text' class="form-control" id = "age" /> <br />
+					<label for="max-wpm">Max WPM:</label> 
+						<input type = 'text' class="form-control" id = "wpm" />
+					<br />
+					<label for="sex">Sex:</label> 
+						<select class="form-control" id="sex">
+							<option value = "m">Male</option>
+							<option value = "f">Female</option>
+						</select>	
+						<br />
+					<input type = 'button' id="btnclick" class="btn btn-success btn-lg" value = 'Query MySQL'/>
+				</div>
+			</form>
+			
+      
+			<div id = 'ajaxDiv'>Your Result Will Display Here : </div>
+			<script language = "javascript" type = "text/javascript">
+				$("#btnclick").click(function () {
+					var xmlhttp = new XMLHttpRequest();
+
+					xmlhttp.onreadystatechange = function() {
+						if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+							var ajaxDisplay = document.getElementById('ajaxDiv');
+							ajaxDisplay.innerHTML = xmlhttp.responseText;
+						}
+					}
+					// Now get the value from user and pass it to
+					// server script.
+					var age = $('#age').val();
+					var sex = $('#sex').val();
+					var wpm = $('#wpm').val();
+
+					xmlhttp.open("GET","index1.php?age=" + age+"&wpm="+wpm+"&sex="+sex, true);
+					xmlhttp.send();
+				});
+			</script>
+		</body>
+</html>
